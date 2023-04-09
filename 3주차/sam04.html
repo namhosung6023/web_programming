@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = " https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>v-model</title>
+</head>
+<body>
+    <div id = "app">
+        <input v-model = "myName" placeholder="이름을 작성하세요" >
+        <P>나는 {{myName}} 입니다. </P><br>
+
+        <h2>입력을 자동으로 수식으로 변경 예제</h2>
+        <input v-model.number="myNumber" type="number">
+        <p>100을 더해서 표시 {{100 + myNumber}}</p>
+        <textarea v-model = "myText" cols="30" row="10"></textarea>
+        <p>문장은, {{myText}}</p>
+        <p>문자수는 {{myText.length}}입니다. </p><br>
+
+        <h2>앞뒤 공백을 자동으로 제거하는 (트림) 예제</h2>
+        <input v-model.trim="myText1">
+        <p>앞뒤 공백을 제거 {{myText1}}</p>
+    </div>
+
+    <script>
+        new Vue ({
+            el : '#app',
+            data:  {
+                myName: '',
+                myText : '오늘은 월요일 입니다',
+                myNumber:0,
+                myText1: ''
+            }
+        })
+    </script>
+</body>
+</html>

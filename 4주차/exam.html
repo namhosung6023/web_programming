@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = " https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>다양한 바인딩</h2>
+    <style>
+        .strike-through {
+            color: red;
+        }
+        .dark {
+            background-color: yellow;
+        }
+    </style>
+
+    <div id = "app">
+        <a v-bind:href="myUrl">v-bind 네이버</a>
+        <br>
+        <img v-bind:src = "filename"></img>
+        <br>
+        <p v-bind:align="myAlign2">텍스트를 왼쪽 정렬</p>
+        <br>
+        <p v-bind:align="myAlign">텍스트를 왼쪽 정렬</p>
+        <br>
+        <p v-bind:align="myAlign1">텍스트를 왼쪽 정렬</p>
+        <br>
+        <p v-bind:class= "myClass">인라인 스타일로 글자색을 빨간색으로</p>
+        <p v-bind:style= "{color: line_font_red, fontSize : inline_size_150}">인라인 스타일로 글자크기를 150% 크게 빨간색으로 </p>
+        
+
+
+
+
+    </div>
+    
+    <script>
+        new Vue({
+            el : '#app',
+            data: {
+                filename : 'spring/그림2.jpg', 
+                myUrl : 'https://www.naver.com',
+                myAlign: 'right',
+                myAlign1: 'center',
+                myAlign2: 'left',
+                myClass: 'strike-through',
+                darkClass: 'dark',
+                color: 'red'
+
+            }
+        })
+    </script>
+</body>
+</html>

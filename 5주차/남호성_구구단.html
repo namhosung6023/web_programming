@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = " https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="project.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h2>[구구단]</h2>
+        <h3 v-bind:align="myAlign">
+            학번 : 20200722 <br>
+            이름 : 남호성
+        </h3>
+        <button class = "btn-add" @click="showGuGu">추가 </button>
+        <button class ="btn-delete" @click="deleteGuGu">마지막 단 삭제 </button>
+        <div class="gugudan-container">
+            
+          <ul>
+            <li v-for="item in myArray.slice(0,1)">
+                <h3>{{item}}단</h3>
+              <p v-for="item2 in 9">{{item}}x{{item2}} = {{item * item2}}</p>
+              <br>
+            </li>
+          </ul>
+          <ul class="added-gugudan" v-for="item in myArray.slice(1)">
+            <li>
+                <h3>{{item}} 단</h3>
+              <p v-for="item2 in 9">{{item}}x{{item2}} = {{item * item2}}</p>
+              <br>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <style>
+        .gugudan-container {
+          display: flex;
+          flex-direction: row;
+        }
+        .added-gugudan {
+          display: flex;
+          flex-direction: row;
+        }
+        .added-gugudan li {
+          margin-left: 10px;
+        }
+        .btn-add {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-delete {
+            padding: 10px 15px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+      </style>
+      
+      <script>
+        new Vue({
+          el: "#app",
+          data: {
+            myArray: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            show: true,
+            myAlign : 'right'
+          },
+          methods: {
+            showGuGu: function () {
+              this.myArray.push(this.myArray[this.myArray.length - 1] + 1);
+            },
+            deleteGuGu: function () {
+              if (this.myArray.length > 1) {
+                this.myArray.pop();
+              }
+            },
+          },
+        });
+      </script>
+</body>
+</html>

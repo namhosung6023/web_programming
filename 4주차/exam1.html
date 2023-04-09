@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = " https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app">
+        <h2>입력폼 활용</h2>
+        이름 : <input v-model = "myName" placeholder="이름을 작성하세요" >
+        <p></p>
+        <label>
+            <input type="radio" value="봄.jpg" v-model="fileName">
+            봄
+        </label><br>
+        <label>
+            <input type="radio" value="여름.jpg" v-model="fileName">
+             여름
+        </label><br>
+        <label>
+            <input type="radio" value="가을.jpg" v-model="fileName">
+             가을
+        </label><br>
+        <label>
+            <input type="radio" value="겨울.jpg" v-model="fileName">
+            겨울
+        </label><br>
+
+        <p>내가선택한 이미지는{{fileName}} 입니다.</p> 
+        <p>파일명을 분리하면 {{afterFileName = fileName.split('.')}}입니다. </p>
+        <p>내 이름은 {{myName}} 이고 좋아하는 계절은 {{afterFileName[0]}}</p>
+        <img v-bind:src="fileName">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                myName: '',
+                fileName: ''
+            }
+        })
+    </script>
+</body>
+</html>

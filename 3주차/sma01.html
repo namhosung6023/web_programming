@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = " https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>속성연습</title>
+</head>s
+<body>
+    <div id = "app">
+        <p v-bind:align="myAlign1">
+        <img src="spring/그림 1.jpg" alt="봄꽃"> 직접 지정 방식 </img>
+        <br>
+        <img v-bind:src = "filename"> v-bind로 지정한 방식 </img>
+        <br>
+        <img :src = "filename"> v-bind로 지정한 방식 </img>
+    </p>
+        <hr>
+        <p v-bind:align="myAlign">
+          <a href = "https://www.naver.com">네이버</a>
+          <br>
+          <a v-bind:href="myUrl">v-bind 네이버</a>
+          <br>
+          <a :href="myUrl">v-bind 네이버</a>
+        </p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                filename : 'spring/그림 1.jpg', 
+                myUrl : 'https://www.naver.com',
+                myAlign: 'right',
+                myAlign1: 'center'
+            }
+        })
+    </script>
+</body>
+</html>

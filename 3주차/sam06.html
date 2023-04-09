@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = " https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>선택한 라디오 버튼을 표시하는 예제</h2>
+    <div id ="app">
+        <label>
+            <input type="radio" value="red" v-model="picked">
+            적
+        </label><br>
+        <label>
+            <input type="radio" value="green" v-model="picked">
+             녹
+        </label><br>
+        <label>
+            <input type="radio" value="blue" v-model="picked">
+             청
+        </label><p>
+            {{picked}} 이 선택됨 <br><br>
+
+            <h2>이미지 출력을 라디오 버튼으로 변경하는 예제</h2>
+
+
+        <label>
+            <input type="radio" value="spring/그림2.jpg" v-model = 'fileName'>
+           1번 사진
+        </label><br>
+        <label>
+            <input type="radio" value="spring/그림3.jpg" v-model = 'fileName'>
+            2번 사진
+        </label><br>
+        <p>{{fileName}} 선택</p>
+        <img v-bind:src = "fileName"></img>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data : {
+                picked: 'red',
+                fileName: ''
+            }
+        })
+    </script>
+</body>
+</html>

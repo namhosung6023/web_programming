@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = " https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app">
+        <h2>true 일때만 표시하는 예제</h2>
+        <label><input type="checkbox" v-model= "myVisble">표시</label>
+        <p v-if="myVisble">체크박스가 on</p>
+        <p v-else>체크박스가 off</p><br>
+
+        <h2>배열 데이터를 리스트로 표시하는 예제</h2>
+        <ul>
+            <li v-for="item in objArray">{{ item.name }}\{{ item.price}}</li>
+
+        <h2>1x5 ~1x10을 반복 표시하는 예제 </h2>
+            <li v-for="n in 10">{{n}}x5={{n *5}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item, index) in myArray">
+                {{item}}:{{item}}
+            </li>
+        </ul>
+
+
+    </div>
+    <script>
+        new Vue({
+            el : '#app',
+            data: {
+                myArray:['잼빵', '멜론빵 ',' 크로와상'],
+                myVisble:false,
+                objArray : [
+                    {name : '잼빵 ', price : 1000},
+                    {name: '멜론빵', price : 1200},
+                    {name: '크로와상', price : 1500},
+                ]
+                
+            }
+        })
+    </script>
+</body>
+</html>
