@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id = "app">
+        <h2>다양한 데이터의 출력</h2>
+        <p>{{myText}}</p>
+        <p v-text = "myText"></p>
+        <p v-html = "htmlText"></p>
+        <p>학번: {{myNumber}}</p>
+        <p>한번도 휴학을 하지 않았는가? </p>
+        <p>{{boolen}}</p>
+        <p>장지형은 공부를 하는것을 좋아하는가? </p>
+        <p>{{boolen}}</p>
+        <p>장지형 개인정보 오브젝트 배열: <br> {{myArray}}</p>
+        <p>{{$data}}</p>
+    </div>
+    
+    <script>
+        new Vue({
+            el : '#app',
+            data: {
+                myText: "장지형 공부시키기 프로젝트",
+                htmlText: "<h3>장지형 개인정보 저장 </h3>",
+                myNumber: 20,
+                boolen : false,
+                myArray : [
+                    {name : "장지형", college: "서강대학교"}, 
+                    {name : "장지형", age : 23},
+                    {name : "장지형", birthday: "6월 7일"}
+                ]
+            }
+        })
+    </script>
+    
+</body>
+</html>

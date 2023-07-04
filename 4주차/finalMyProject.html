@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>버튼으로 리스트에 추가</h2>
+    <div id = "app">
+        <ul>
+            <li v-for = "item in myArray">
+                {{item}}
+            </li>
+        </ul>
+        <button v-on:click = "addList"> 맨뒤에 추가</button><br>
+        <button v-on:click="addObj(3)">네번쨰에 추가 해줌 </button><br>
+        <button v-on:click="changeList(0)">첫번째를 병경 </button><br>
+        <button v-on:click="deleteobj(1)">두번째를 삭제</button>
+        
+    </div>
+
+    <script>
+        new Vue({
+            el : "#app",
+            data: {
+                myArray : ["첫번째", "두번째", "세번쨰", "네번재", "다섯번째"]
+            },
+            methods: {
+                addList : function () {
+                    this.myArray.push("[맨뒤에 추가해줌]")
+                },
+                addObj : function (index) {
+                    this.myArray.splice(index, 0 , "[추가]");
+                },
+                changeList : function (index) {
+                    this.myArray.splice(index, 1, "[변경]")
+                },
+                deleteobj : function (index) {
+                    this.myArray.splice(index, 1)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

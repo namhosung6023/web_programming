@@ -15,7 +15,7 @@
         <h2>입력을 자동으로 수식으로 변경 예제</h2>
         <input v-model.number="myNumber" type="number">
         <p>100을 더해서 표시 {{100 + myNumber}}</p>
-        <textarea v-model = "myText" cols="30" row="10"></textarea>
+        <textarea v-model.lazy = "myText" cols="30" row="10"></textarea>
         <p>문장은, {{myText}}</p>
         <p>문자수는 {{myText.length}}입니다. </p><br>
 

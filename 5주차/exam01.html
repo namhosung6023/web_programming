@@ -9,10 +9,10 @@
     <title>Document</title>
 </head>
 
-<body>
+<body>ㄴ
 
     <h2>google Chart로 원그래프를 그리는 예제</h2>
-    <h3>선호하는 점심 메뉴 투표</h3>
+    <h3>장지형이 선호하는 점심 메뉴 투표</h3>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
@@ -21,15 +21,15 @@
         var data = google.visualization.arrayToDataTable([
           ['종류', '개수'],
           ['도시락', 3],
-          ['갈비탕', 4],
-          ['오므라이스',  5],
-          ['짬뽕', 1],
-          ['비빔밥',  3],
-          ['메밀소바',  1]
+          ['피자', 4],
+          ['엽떡',  5],
+          ['아이스크림', 1],
+          ['햄버거',  3],
+          ['꼬북칩',  1]
         ]);
 
         var options = {
-          title: '선호하는 점심 ',
+          title: '장지형이 선호하는 저녁  ',
           is3D: true,
         };
 
@@ -48,7 +48,7 @@
         new Vue({
             el : '#app',
             data : {
-                dataArray:orgdata
+                dataArray:data
             },
             methods: {
                 addOne: function(val) {
